@@ -17,6 +17,8 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import green from "@material-ui/core/colors/green";
 import { Link } from "react-router-dom";
 
+//Logic for Booking confirmation
+
 const styles = (theme) => ({
   close: {
     width: theme.spacing.unit * 4,
