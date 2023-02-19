@@ -1,23 +1,36 @@
 .header {
-    background-color: #222;
-    height: 36px;
-    padding: 8px 32px 8px 16px;
-  }
+  background-color: #222;
+  height: 36px;
+  padding: 8px 32px 8px 16px;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .logo {
-    animation: spin 8s linear infinite;
-    background-color: #ff7f7f;
-    height: 35px;
-  }
-  
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+.logo {
+  background-color: #ff7f7f;
+  height: 35px;
+  animation: rotation 8s infinite linear;
+}
 
-  
-
-  .logoAndImage{
-    float: right;
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.button-group Button {
+  margin: 0px 4px;
+}
+
+/*
+
+CSS file for Header component
+ */
