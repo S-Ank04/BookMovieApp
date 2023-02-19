@@ -13,6 +13,7 @@ import Button from "@material-ui/core/Button";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import { Link } from "react-router-dom";
 
+//functionality for Booking a show
 const BookShow = (props) => {
   const [location, setLocation] = useState("");
   const [theatre, setTheatre] = useState("");
@@ -36,11 +37,12 @@ const BookShow = (props) => {
   useEffect(() => {
     let dataShows = null;
 
-    fetch(props.baseUrl + "movies/" + props.match.params.id + "/shows", {
+    fetch(props.baseUrl + "movie-details/" + props.match.params.id + "/shows", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "Cache-Control": "no-cache",
+        Accept: "application/json",
       },
       body: dataShows,
     })
@@ -196,14 +198,14 @@ const BookShow = (props) => {
       <Header baseUrl={props.baseUrl} />
       <div className="bookShow">
         <Typography className="back">
-          <Link to={"/movie/" + props.match.params.id}>
+          <Link to={"/movie-details/" + props.match.params.id}>
             &#60; Back to Movie Details
           </Link>
         </Typography>
 
         <Card className="cardStyle">
           <CardContent>
-            <Typography variant="headline" component="h2">
+            <Typography variant="h2" component="h2">
               BOOK SHOW
             </Typography>
             <br />
@@ -285,9 +287,7 @@ const BookShow = (props) => {
             <br />
             <Typography>Unit Price: Rs. {unitPrice}</Typography>
             <br />
-            <Typography>
-              Total Price: Rs. {unitPrice * tickets}
-            </Typography>
+            <Typography>Total Price: Rs. {unitPrice * tickets}</Typography>
             <br />
             <br />
             <Button
